@@ -12,7 +12,7 @@ After the user completes all questions, the application will create and HTML usi
 
 ## Screenshot:
 
-1[Screencastify of running application](./assets/screencastify.gif)
+![Screencastify of running application](./assets/screencastify.gif)
 
 ## Deployed Application:
 
