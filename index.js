@@ -1,4 +1,4 @@
-const ingquirer = require("inquirer");
+const inquirer = require("inquirer");
 
 const Employee = require("./lib/employee");
 const Engineer = require("./lib/engineer");
@@ -28,7 +28,7 @@ function runInquirer() {
         name: "title"
     }];
 
-    return ingquirer
+    return inquirer
         .prompt(promptArray);
 }
 
@@ -39,7 +39,7 @@ function runInquirerManager() {
         name: "officeNumber"
     }];
 
-    return ingquirer
+    return inquirer
         .prompt(promptArray);
 }
 
@@ -50,7 +50,7 @@ function runInquirerEngineer() {
         name: "github"
     }];
 
-    return ingquirer
+    return inquirer
         .prompt(promptArray);
 }
 
@@ -61,7 +61,7 @@ function runInquirerIntern() {
         name: "school"
     }];
 
-    return ingquirer
+    return inquirer
         .prompt(promptArray);
 }
 
@@ -199,7 +199,7 @@ async function run() {
 
                     console.log(html);
                     const fs = require("fs");
-                    fs.writeFile('myteam.html', html, function (err) {
+                    fs.writeFile('index.html', html, function (err) {
                         if (err) throw err;
                         console.log('File is created successfully');
                     });
