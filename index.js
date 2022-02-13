@@ -1,4 +1,4 @@
-const ingquirer = require("inquire");
+const ingquirer = require("inquirer");
 
 const Employee = require("./lib/employee");
 const Engineer = require("./lib/engineer");
@@ -69,12 +69,12 @@ async function run() {
     let employeeArray = [];
     const maxTimes = 4;
     for (i = 0; i < maxTimes; i++) {
-        const promise = new Promis((resolve, reject) => {
+        const promise = new Promise((resolve, reject) => {
             runInquirer()
                 .then(function ({name, id, email, title}) {
                     if (title === "Manager") {
                         runInquirerManager().then(function ({officeNumber}) {
-                            this.Employee = new Manager(name, id, email, officeNumber, title);
+                            this.employee = new Manager(name, id, email, officeNumber, title);
                             console.log(officeNumber);
                             employeeArray.push(employee);
                             resolve("done");
@@ -82,7 +82,7 @@ async function run() {
 
                     } else if  (title === "Engineer") {
                         runInquirerEngineer().then(function ({github}) {
-                            this.Employee = new Engineer(name, id, email, github, title);
+                            this.employee = new Engineer(name, id, email, github, title);
                             console.log(github);
                             employeeArray.push(employee);
                             resolve("done");
@@ -90,7 +90,7 @@ async function run() {
 
                     } else if  (title === "Intern") {
                         runInquirerIntern().then(function ({school}) {
-                            this.Employee = new Intern(name, id, email, school, title);
+                            this.employee = new Intern(name, id, email, school, title);
                             console.log(school);
                             employeeArray.push(employee);
                             resolve("done");
@@ -187,7 +187,7 @@ async function run() {
                         <body>
                             <nav class="navbar navbar-dark bg-dark justify-content-center align-items-center">
                                 <span class="navbar-brand mb-0 h1">
-                                    <h1>Our Team>/h1>
+                                    <h1>Our Team
                                 </span>
                             </nav>
                             <div class="row">
